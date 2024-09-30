@@ -1,8 +1,13 @@
 import { BiSolidHot, BiStopwatch } from 'react-icons/bi';
 import GreenBtn from '../share/GreenBtn/GreenBtn';
+import { useContext } from 'react';
+import { HandleContext } from '../../Pages/Home';
 
-const Recipe = ({recipes,handleCook}) => {
+const Recipe = ({recipes}) => {
   const {id,name,img,desc,time,calories,ingredients} = recipes;
+
+  const {handleCook} = useContext(HandleContext);
+
   return (
     <div className='p-6 border border-gray-200 rounded-2xl'>
       <img src={img} alt={`Image of this title ${name}`} className='w-full rounded-xl mb-6' />
